@@ -2,7 +2,6 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import BackgroundImage from './background-image';
 import Header from './header';
-import Styles from '../../styles/selection.css';
  
 export default class App extends React.Component {
   constructor() {

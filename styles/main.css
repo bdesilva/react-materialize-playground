@@ -110,3 +110,9 @@ p {
 .notFoundContainer h1 {
   color: white;
 }
+
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -17,19 +17,18 @@ export default class Login extends React.Component {
       headers: {"Content-Type": "application/json", "Access-Control-Allow-Credentials": "true"}});*/
     const res = await Fetch(`http://localhost:8008/login/${this.formData.username}/${this.formData.password}`
       , { method: 'GET' });
-    const json = await res.json();
-    console.dir(json);
-    browserHistory.push('/hi');
+    const authorized = await res.json();    
+    authorized ? browserHistory.push('/main') : browserHistory.push('/');
   }
 
   render() {
     return (
-      <div className={Styles.contentBody}>
+      <div>
         <h1>Welcome to the login page!</h1>
         <div className='section'>
           <Row>
             <Col m={6} s={12}>
-              <Card title='Login' 
+              <Card className='hoverable' title='Login' 
                 actions={[<div key="loginButton"><Button onClick={::this.login} waves='light'>Login<Icon right>perm_identity</Icon></Button></div>]}>
                 <Input s={12} label="Username" onChange={(event) => this.formData.username = event.target.value} />
                 <Input type="password" label="Password" s={12} onChange={(event) => this.formData.password = event.target.value} />
