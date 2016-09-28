@@ -33,7 +33,7 @@ export default class App extends React.Component {
         leave: 'login-leave',
         leaveActive: 'login-leave-active',
       };
-    } else if (page === 'public/main') {
+    } else {
       cssClass = {
         enter: 'main-enter',
         enterActive: 'main-enter-active',

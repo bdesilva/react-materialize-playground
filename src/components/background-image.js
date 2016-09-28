@@ -13,7 +13,7 @@ export default class BackgroundImage extends React.Component {
       'something/main': Styles.main
     };
     
-   let src = urls[this.props.page];
+   let src = urls[this.props.page] || 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/404_number.jpg/640px-404_number.jpg';
   
    return <img src={src} className={styles[this.props.page] || Styles.other} />;
   }

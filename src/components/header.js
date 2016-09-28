@@ -4,16 +4,6 @@ import { Navbar, NavItem } from 'react-materialize';
  
 export default class Header extends React.Component {
   render() {
-    let pages = {
-      '/public/': 'Home Page',
-      '/public/main': 'About Page',
-    };
-
-    let style = {
-      float: 'left',
-      marginRight: '1em',
-    };
-
     return (      
       <div className='navbar-fixed'>
         <Navbar brand='React-Materialize Demo' right>
