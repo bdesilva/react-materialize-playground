@@ -23,7 +23,7 @@ export default class App extends React.Component {
 
   render() {
     let page = this.props.location.pathname.substr(1);
-    if (page === 'public/') page = 'login';
+    if (page === '') page = 'login';
 
     let cssClass;
     if (page === 'login') {

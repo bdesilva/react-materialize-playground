@@ -6,10 +6,10 @@ import Main from './components/main';
 import NotFound from './components/not-found';
 
 const routes = (
-  <div>
-    <Route path="/public/" component={App}>
+  <div>    
+    <Route path="/" component={App}>
       <IndexRoute component={Login} />
-      <Route path="/public/main" component={Main} />    
+      <Route path="/main" component={Main} />      
     </Route>
     <Route path="*" component={NotFound} />
   </div>

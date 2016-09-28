@@ -7,8 +7,8 @@ export default class Header extends React.Component {
     return (      
       <div className='navbar-fixed'>
         <Navbar brand='React-Materialize Demo' right>
-          <NavItem href='#' onClick={() => browserHistory.push('/public/')}>Home</NavItem>
-          <NavItem href='#' onClick={() => browserHistory.push('/public/main')}>Main</NavItem>
+          <NavItem href='#' onClick={() => browserHistory.push('/')}>Home</NavItem>
+          <NavItem href='#' onClick={() => browserHistory.push('/main')}>Main</NavItem>
         </Navbar>
       </div>
     );

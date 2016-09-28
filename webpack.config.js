@@ -14,8 +14,7 @@ module.exports = {
   entry: ['babel-polyfill', './src/main.jsx'],
   output: {
     path: PATHS.build,
-    filename: 'build.min.js',
-    publicPath: PATHS.public
+    filename: 'build.min.js'
   },
   module: {
     loaders: [{

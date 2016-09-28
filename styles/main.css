@@ -94,3 +94,19 @@ p {
   transition: transform 1000ms ease-in-out;
 }
 
+.notFoundContainer {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/404_number.jpg/640px-404_number.jpg');
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  z-index: 0;
+  left: 0;
+  text-align: center;
+}
+
+.notFoundContainer h1 {
+  color: white;
+}

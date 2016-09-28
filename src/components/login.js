@@ -19,7 +19,7 @@ export default class Login extends React.Component {
       , { method: 'GET' });
     const json = await res.json();
     console.dir(json);
-    browserHistory.push('/public/main');
+    browserHistory.push('/hi');
   }
 
   render() {
