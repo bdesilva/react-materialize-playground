@@ -20,23 +20,30 @@ export default class Login extends React.Component {
       headers: {"Content-Type": "application/json", "Access-Control-Allow-Credentials": "true"}});*/
     event.preventDefault();
     if (this.state.username === '' || this.state.password === '') {
-      this.setState({validError: 'Field cannot be empty'});
+      this.setState({ validError: 'Field cannot be empty' });
       Materialize.toast('Field cannot be empty', 1000)
     } else {
-      const res = await Fetch(`http://localhost:8008/login/${this.state.username}/${this.state.password}`
-      , { method: 'GET' });
-      const authorized = await res.json();    
+      // const res = await Fetch(`http://localhost:8008/login/${this.state.username}/${this.state.password}`
+      // , { method: 'GET' });
+      const res = await Fetch('http://localhost:8008/login',
+        {
+          method: 'POST',
+          mode: 'no-cors',
+          body: JSON.stringify({"username": this.state.username, "password": this.state.password}),
+          headers: { "Content-Type": "application/json", Accept: 'application/json' }
+        });
+      const authorized = await res.json();
       authorized ? browserHistory.push('/main') : Materialize.toast('Invalid credentials', 1000);
     }
-    this.setState({username: '', password: ''});
+    this.setState({ username: '', password: '' });
   }
 
   handleUsernameChange(event) {
-    this.setState({username: event.target.value});
+    this.setState({ username: event.target.value });
   }
 
   handlePasswordChange(event) {
-    this.setState({password: event.target.value});
+    this.setState({ password: event.target.value });
   }
 
   render() {
@@ -60,7 +67,7 @@ export default class Login extends React.Component {
                         <div className='input-field col s12 m12 l12'>
                           <input id='username' type='text' className='validate' value={this.state.username} onChange={::this.handleUsernameChange} />
                           <label htmlFor='username' data-error={this.state.validError}>Username</label>
-                        </div>                    
+                        </div>
                       </div>
                       <div className='row'>
                         <div className='input-field col s12 m12 l12'>
@@ -72,13 +79,13 @@ export default class Login extends React.Component {
                   </div>
                   <div className='card-action'>
                     <a href='#' onClick={::this.login} className='waves-effect waves-light btn'><i className='material-icons left'>perm_identity</i>Login</a>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>        
-      </div>
+        </div>
+      </div>        
+      </div >
     );
   }
 }
